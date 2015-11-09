@@ -1,0 +1,188 @@
+#aula de c/ dia 09/11/2015
+
+tipos de variáveis em c
+
+int-inteiro
+float-real flutuante
+char-caracter
+string-cadeia de caracters
+double-cadeia de números
+signed-com sinal= -285+255
+unsigned-sem sinal 
+
+parâmetro das variáveis
+%d -%i-inteiro
+%f-float
+%c-char
+%s-string
+%lf-double
+
+valores lógicos
++ adição
+- subtração
+* multiplicação
+/ divisão
+% mod
+++ incrementação
+-- decrementação
+= atribuição
+== comparação
+=== comparação valor e tipo
+
+linguagem assembley-nível baixo
+
+
+1) código hello world
+
+	#include <stdio.h>
+	int main()
+
+	{
+	printf("hello world\n");
+
+
+	return 0;	
+	}
+
+2) código para informar número
+
+	#include <stdio.h>
+	int main()
+
+	{
+	int numero;
+
+	printf("informe um numero:");
+
+	scanf("%d", &numero);
+
+	printf("%d",numero);
+
+	printf("o numero escito foi: %d", numero);
+
+	system ("pause");
+
+	return 0;	
+	}
+
+3) informe três notas e sua  média
+
+	#include <stdio.h>
+
+	int main ()
+
+	{
+	
+	float n1,n2,n3,m;
+	
+	printf("informe primeira nota");
+	scanf("%f",&n1);
+	
+	printf("informe segunda nota");
+	scanf("%f",&n2);
+	
+	printf("informe terceira nota");
+	scanf("%f",&n3);
+	
+	m=(n1+n2+n3)/3;
+	
+	printf("sua media e: %f", m);
+	
+	
+	return 0;
+	
+	}
+
+*Estrutura de condição se(if),senão(else)
+
+	if (condição)
+
+	> (maior)
+	< (menor)
+	>= (maior ou igual)
+	<= (menor ou igual)
+	== (igual)
+	!= (diferente)
+	!(não)
+
+4) informe três notas e sua media caso aprovado
+
+	#include <stdio.h>
+	#include <stdlib.h>
+	int main ()
+
+	{
+	
+	float n1,n2,n3,m;
+	
+	printf("informe primeira nota:");
+	scanf("%f",&n1);
+	
+	printf("informe segunda nota:");
+	scanf("%f",&n2);
+	
+	printf("informe terceira nota:");
+	scanf("%f",&n3);
+	
+	
+	m=(n1+n2+n3)/3;
+	
+	if (m>=7)
+	
+	{
+	printf("Aprovado");
+	}
+	
+	else if(m>=5)
+	{
+	printf("Recuperação");
+	}
+	
+	else
+	{
+	printf("Reprovado");
+	}
+	
+	return 0;
+	
+
+5) faca um programa c que solicite a idade e verifique se a idade é igual ou superior a 18 anos,
+caso sim informe quanto tempo tem de habilitado, caso não informe quanto tempo falta para consegui 
+o documento.
+
+
+	#include <stdio.h>
+	#include <stdlib.h>
+
+	/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+	int main(int argc, char *argv[]) 
+
+	{
+	
+	
+	int idade,j,l;
+	
+	printf("Informe sua idade:");
+	scanf("%i",&idade);
+	
+	j=(idade-18);
+	l=(18-idade);
+	
+	if (idade>=18)
+	
+	
+	{
+	printf("Habilitado, por:%i anos",j);
+	}
+	
+	else if(idade<18)
+	
+	{
+	printf("Não habilitado, faltam %i anos", l);
+	}
+	
+	
+	return 0;
+	}
+
