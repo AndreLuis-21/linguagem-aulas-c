@@ -1,0 +1,1162 @@
+
+/*7.Crie um calendário do mês atual em C e faça uma agenda baseado nesse calendário para ajudar a organizar suas atividades.
+As atividades registradas tem hora de inicio e de termino;
+Não pode ha ver duas agendas no mesmo período já utilizado;
+Cada dia poderá ser registrado até o total de 3 atividades;*/
+
+//obs: Criar TXT com Feriados
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <locale.h>
+#include <conio.h>
+void titulo(void);
+int main (void){
+int l,c,data;
+int opcao;
+char agenda[500];
+char evento[50];
+char horario[50];
+while(opcao!=4){
+setlocale(LC_ALL,"Portuguese");
+system("color 1F");
+printf("*******************************************************\n");
+printf("\a*                      MY Day                         *");
+printf("\n*******************************************************\n");
+printf("\n******************************************************");
+printf("\n*                     Menu                           *");
+printf("\n*                  [1] Agendar                       *");
+printf("\n*             [2] Consultar Agenda                   *");
+printf("\n*           [3] Consultar Feriados                   *");
+printf("\n*                    [4] Sair                        *");
+printf("\n******************************************************\n");
+printf("*******OBS******\n");
+printf("1°- So é Possível Marcar 3 Agendamentos Por dia.\n");
+printf("2°- Ficar Atento Ao Horário Dos Evento Para Evitar Confronto.\n");
+printf("3°- Não é Necessário Inserir o Número 0 nas Datas abaixo de 10\n");
+printf("4°- Programa Criado Por: André Luís,Erivan Enock e Felicio Gabriel.");
+printf("\n");
+printf("\n");
+printf("Escolha a Opção.:");
+    scanf("%i",&opcao);
+system("cls");
+titulo();
+int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativa do calendário
+                 {6,7,8,9,10,11,12},
+                 {13,14,15,16,17,18,19},
+                 {20,21,22,23,24,25,26},
+                 {27,28,29,30,31,1,2}};
+    for (l=0;l<5;l++){
+    for (c=0;c<7;c++){
+        printf("%.2i ", mat[l][c]);
+    }
+    printf("\n\n");
+}
+		   if(opcao>4){
+		   printf("\aOpção Incorreta, Selecione Outra Por Favor\n");
+		   ;}
+	if(opcao==1){
+    printf("\nInforme a Data Desejada: ");
+    	scanf("%i",&data);
+    	if (data==0 || data>31){
+            printf("\a\aData incorreta\n");
+            printf("Agendamento cancelado\n");
+    	}
+    }
+    if(opcao==2){
+    printf("\nInforme a Data Desejada: ");
+    	scanf("%i",&data);
+    	if (data==0 || data>31){
+            printf("Data incorreta\n");
+            printf("Agendamento cancelado\n");
+    	}
+    }
+    if (opcao == 1){                                         //Inicio da Opção de Agendar
+	if(data== 1){
+     printf("\nInforme o Evento: ");
+	 		setbuf(stdin, NULL);
+            scanf("%[^\n]s",evento);
+            setbuf(stdin, NULL);
+    printf("\nInforme o horario Inicial e Final: ");
+            scanf("%[^\n]s",horario);
+    FILE *f1;
+    f1 = fopen("um.bin", "a");
+    fprintf(f1,"\n******************************\n");
+    fprintf(f1,"\n************AGENDA************\n");
+    fprintf(f1,"\n******************************\n");
+    fprintf(f1,"\nEvento Marcado: ");
+    fprintf(f1,evento);
+    fprintf(f1,"\nhorario Inicial e Final do Evento: ");
+    fputs(horario,f1);
+    fprintf(f1,"\n******************************\n");
+    fclose(f1);
+    printf("\a\nAgendamento concluído!\n");
+    }
+
+    if(data == 2){
+     printf("\nInforme o Evento: ");
+	 		setbuf(stdin, NULL);
+            scanf("%[^\n]s",evento);
+            setbuf(stdin, NULL);
+    printf("\nInforme o horario Inicial e Final: ");
+            scanf("%[^\n]s",horario);
+	FILE *f2;
+    f2 = fopen("dois.bin", "a");
+    fprintf(f2,"\n******************************\n");
+    fprintf(f2,"\n************AGENDA************\n");
+    fprintf(f2,"\n******************************\n");
+    fprintf(f2,"\a\a\nEvento Marcado: ");
+    fprintf(f2,evento);
+    fprintf(f2,"\nHorario do Evento: ");
+    fputs(horario,f2);
+    fprintf(f2,"\n******************************\n");
+    fclose(f2);
+    printf("\a\a\nAgendamento concluído!\n");
+	}
+
+     if(data == 3){
+     printf("\nInforme o Evento: ");
+	 		setbuf(stdin, NULL);
+            scanf("%[^\n]s",evento);
+            setbuf(stdin, NULL);
+    printf("\nInforme o horario Inicial e Final: ");
+            scanf("%[^\n]s",horario);
+    FILE *f3;
+    f3 = fopen("tres.bin", "a");
+    fprintf(f3,"\n******************************\n");
+    fprintf(f3,"\n************AGENDA************\n");
+    fprintf(f3,"\n******************************\n");
+    fprintf(f3,"\nEvento Marcado: ");
+    fprintf(f3,evento);
+    fprintf(f3,"\nHorario do Evento: ");
+    fputs(horario,f3);
+    fprintf(f3,"\n******************************\n");
+    fclose(f3);
+    printf("\a\a\nAgendamento concluído!\n");
+    }
+
+    if(data == 4){
+     printf("\nInforme o Evento: ");
+	 		setbuf(stdin, NULL);
+            scanf("%[^\n]s",evento);
+            setbuf(stdin, NULL);
+    printf("\nInforme o horario Inicial e Final: ");
+            scanf("%[^\n]s",horario);
+    FILE *f4;
+    f4 = fopen("quatro.bin", "a");
+    fprintf(f4,"\n******************************\n");
+    fprintf(f4,"\n************AGENDA************\n");
+    fprintf(f4,"\n******************************\n");
+    fprintf(f4,"\nEvento Marcado: ");
+    fprintf(f4,evento);
+    fprintf(f4,"\nHorario do Evento: ");
+    fputs(horario,f4);
+    fprintf(f4,"\n******************************\n");
+    fclose(f4);
+    printf("\a\a\nAgendamento concluído!\n");
+    }
+    if(data == 5){
+     printf("\nInforme o Evento: ");
+	 		setbuf(stdin, NULL);
+            scanf("%[^\n]s",evento);
+            setbuf(stdin, NULL);
+    printf("\nInforme o horario Inicial e Final: ");
+            scanf("%[^\n]s",horario);
+    FILE *f5;
+    f5 = fopen("cinco.bin", "a");
+    fprintf(f5,"\n******************************\n");
+    fprintf(f5,"\n************AGENDA************\n");
+    fprintf(f5,"\n******************************\n");
+    fprintf(f5,"\nEvento Marcado: ");
+    fprintf(f5,evento);
+    fprintf(f5,"\nHorario do Evento: ");
+    fputs(horario,f5);
+    fprintf(f5,"\n******************************\n");
+    fclose(f5);
+    printf("\a\a\nAgendamento concluído!\n");
+    }
+    if(data == 6){
+     printf("\nInforme o Evento: ");
+	 		setbuf(stdin, NULL);
+            scanf("%[^\n]s",evento);
+            setbuf(stdin, NULL);
+    printf("\nInforme o horario Inicial e Final: ");
+            scanf("%[^\n]s",horario);
+    FILE *f6;
+    f6 = fopen("seis.bin", "a");
+    fprintf(f6,"\n******************************\n");
+    fprintf(f6,"\n************AGENDA************\n");
+    fprintf(f6,"\n******************************\n");
+    fprintf(f6,"\nEvento Marcado: ");
+    fprintf(f6,evento);
+    fprintf(f6,"\nHorario do Evento: ");
+    fputs(horario,f6);
+    fprintf(f6,"\n******************************\n");
+    fclose(f6);
+    printf("\a\a\nAgendamento concluído!\n");
+    }
+    if(data == 7){
+     printf("\nInforme o Evento: ");
+	 		setbuf(stdin, NULL);
+            scanf("%[^\n]s",evento);
+            setbuf(stdin, NULL);
+    printf("\nInforme o horario Inicial e Final: ");
+            scanf("%[^\n]s",horario);
+    FILE *f7;
+    f7 = fopen("sete.bin", "a");
+    fprintf(f7,"\n******************************\n");
+    fprintf(f7,"\n************AGENDA************\n");
+    fprintf(f7,"\n******************************\n");
+    fprintf(f7,"\nEvento Marcado: ");
+    fprintf(f7,evento);
+    fprintf(f7,"\nHorario do Evento: ");
+    fputs(horario,f7);
+    fprintf(f7,"\n******************************\n");
+    fclose(f7);
+    printf("\a\a\nAgendamento concluído!\n");
+    }
+    if(data == 8){
+     printf("\nInforme o Evento: ");
+	 		setbuf(stdin, NULL);
+            scanf("%[^\n]s",evento);
+            setbuf(stdin, NULL);
+    printf("\nInforme o horario Inicial e Final: ");
+            scanf("%[^\n]s",horario);
+    FILE *f8;
+    f8 = fopen("oito.bin", "a");
+    fprintf(f8,"\n******************************\n");
+    fprintf(f8,"\n************AGENDA************\n");
+    fprintf(f8,"\n******************************\n");
+    fprintf(f8,"\nEvento Marcado: ");
+    fprintf(f8,evento);
+    fprintf(f8,"\nHorario do Evento: ");
+    fputs(horario,f8);
+    fprintf(f8,"\n******************************\n");
+    fclose(f8);
+    printf("\a\a\nAgendamento concluído!\n");
+    }
+    if(data == 9){
+     printf("\nInforme o Evento: ");
+	 		setbuf(stdin, NULL);
+            scanf("%[^\n]s",evento);
+            setbuf(stdin, NULL);
+    printf("\nInforme o horario Inicial e Final: ");
+            scanf("%[^\n]s",horario);
+    FILE *f9;
+    f9 = fopen("nove.bin", "a");
+    fprintf(f9,"\n******************************\n");
+    fprintf(f9,"\n************AGENDA************\n");
+    fprintf(f9,"\n******************************\n");
+    fprintf(f9,"\nEvento Marcado: ");
+    fprintf(f9,evento);
+    fprintf(f9,"\nHorario do Evento: ");
+    fputs(horario,f9);
+    fprintf(f9,"\n******************************\n");
+    fclose(f9);
+    printf("\a\a\nAgendamento concluído!\n");
+    }
+    if(data == 10){
+     printf("\nInforme o Evento: ");
+	 		setbuf(stdin, NULL);
+            scanf("%[^\n]s",evento);
+            setbuf(stdin, NULL);
+    printf("\nInforme o horario Inicial e Final: ");
+            scanf("%[^\n]s",horario);
+    FILE *f10;
+    f10 = fopen("dez.bin", "a");
+    fprintf(f10,"\n******************************\n");
+    fprintf(f10,"\n************AGENDA************\n");
+    fprintf(f10,"\n******************************\n");
+    fprintf(f10,"\nEvento Marcado: ");
+    fprintf(f10,evento);
+    fprintf(f10,"\nHorario do Evento: ");
+    fputs(horario,f10);
+    fprintf(f10,"\n******************************\n");
+    fclose(f10);
+    printf("\a\a\nAgendamento concluído!\n");
+    }
+    if(data == 11){
+	printf("\nInforme o Evento: ");
+	 		setbuf(stdin, NULL);
+            scanf("%[^\n]s",evento);
+            setbuf(stdin, NULL);
+    printf("\nInforme o horario Inicial e Final: ");
+            scanf("%[^\n]s",horario);
+    FILE *f11;
+    f11 = fopen("onze.bin", "a");
+    fprintf(f11,"\n******************************\n");
+    fprintf(f11,"\n************AGENDA************\n");
+    fprintf(f11,"\n******************************\n");
+    fprintf(f11,"\nEvento Marcado: ");
+    fprintf(f11,evento);
+    fprintf(f11,"\nHorario do Evento: ");
+    fputs(horario,f11);
+    fprintf(f11,"\n******************************\n");
+    fclose(f11);
+    printf("\a\a\nAgendamento concluído!\n");
+    }
+    if(data == 12){
+    printf("\nInforme o Evento: ");
+	 		setbuf(stdin, NULL);
+            scanf("%[^\n]s",evento);
+            setbuf(stdin, NULL);
+    printf("\nInforme o horario Inicial e Final: ");
+            scanf("%[^\n]s",horario);
+    FILE *f12;
+    f12 = fopen("doze.bin", "a");
+    fprintf(f12,"\n******************************\n");
+    fprintf(f12,"\n************AGENDA************\n");
+    fprintf(f12,"\n******************************\n");
+    fprintf(f12,"\nEvento Marcado: ");
+    fprintf(f12,evento);
+    fprintf(f12,"\nHorario do Evento: ");
+    fputs(horario,f12);
+    fprintf(f12,"\n******************************\n");
+    fclose(f12);
+    printf("\a\a\nAgendamento concluído!\n");
+    }
+    if(data == 13){
+    printf("\nInforme o Evento: ");
+	 		setbuf(stdin, NULL);
+            scanf("%[^\n]s",evento);
+            setbuf(stdin, NULL);
+    printf("\nInforme o horario Inicial e Final: ");
+            scanf("%[^\n]s",horario);
+    FILE *f13;
+    f13 = fopen("treze.bin", "a");
+    fprintf(f13,"\n******************************\n");
+    fprintf(f13,"\n************AGENDA************\n");
+    fprintf(f13,"\n******************************\n");
+    fprintf(f13,"\nEvento Marcado: ");
+    fprintf(f13,evento);
+    fprintf(f13,"\nHorario do Evento: ");
+    fputs(horario,f13);
+    fprintf(f13,"\n******************************\n");
+    fclose(f13);
+    printf("\a\a\nAgendamento concluído!\n");
+    }
+    if(data == 14){
+    printf("\nInforme o Evento: ");
+	 		setbuf(stdin, NULL);
+            scanf("%[^\n]s",evento);
+            setbuf(stdin, NULL);
+    printf("\nInforme o horario Inicial e Final: ");
+            scanf("%[^\n]s",horario);
+    FILE *f14;
+    f14 = fopen("quatorze.bin", "a");
+    fprintf(f14,"\n******************************\n");
+    fprintf(f14,"\n************AGENDA************\n");
+    fprintf(f14,"\n******************************\n");
+    fprintf(f14,"\nEvento Marcado: ");
+    fprintf(f14,evento);
+    fprintf(f14,"\nHorario do Evento: ");
+    fputs(horario,f14);
+    fprintf(f14,"\n******************************\n");
+    fclose(f14);
+    printf("\a\a\nAgendamento concluído!\n");
+    }
+    if(data == 15){
+    printf("\nInforme o Evento: ");
+	 		setbuf(stdin, NULL);
+            scanf("%[^\n]s",evento);
+            setbuf(stdin, NULL);
+    printf("\nInforme o horario Inicial e Final: ");
+            scanf("%[^\n]s",horario);
+    FILE *f15;
+    f15 = fopen("quinze.bin", "a");
+    fprintf(f15,"\n******************************\n");
+    fprintf(f15,"\n************AGENDA************\n");
+    fprintf(f15,"\n******************************\n");
+    fprintf(f15,"\nEvento Marcado: ");
+    fprintf(f15,evento);
+    fprintf(f15,"\nHorario do Evento: ");
+    fputs(horario,f15);
+    fprintf(f15,"\n******************************\n");
+    fclose(f15);
+    printf("\a\a\nAgendamento concluído!\n");
+    }
+    if(data == 16){
+     printf("\nInforme o Evento: ");
+	 		setbuf(stdin, NULL);
+            scanf("%[^\n]s",evento);
+            setbuf(stdin, NULL);
+    printf("\nInforme o horario Inicial e Final: ");
+            scanf("%[^\n]s",horario);
+    FILE *f16;
+    f16 = fopen("dezesseis.bin", "a");
+    fprintf(f16,"\n******************************\n");
+    fprintf(f16,"\n************AGENDA************\n");
+    fprintf(f16,"\n******************************\n");
+    fprintf(f16,"\nEvento Marcado: ");
+    fprintf(f16,evento);
+    fprintf(f16,"\nHorario do Evento: ");
+    fputs(horario,f16);
+    fprintf(f16,"\n******************************\n");
+    fclose(f16);
+    printf("\a\a\nAgendamento concluído!\n");
+    }
+    if(data == 17){
+     printf("\nInforme o Evento: ");
+	 		setbuf(stdin, NULL);
+            scanf("%[^\n]s",evento);
+            setbuf(stdin, NULL);
+    printf("\nInforme o horario Inicial e Final: ");
+            scanf("%[^\n]s",horario);
+    FILE *f17;
+    f17 = fopen("dezessete.bin", "a");
+    fprintf(f17,"\n******************************\n");
+    fprintf(f17,"\n************AGENDA************\n");
+    fprintf(f17,"\n******************************\n");
+    fprintf(f17,"\nEvento Marcado: ");
+    fprintf(f17,evento);
+    fprintf(f17,"\nHorario do Evento: ");
+    fputs(horario,f17);
+    fprintf(f17,"\n******************************\n");
+    fclose(f17);
+    printf("\a\a\nAgendamento concluído!\n");
+    }
+    if(data == 18){
+    printf("\nInforme o Evento: ");
+	 		setbuf(stdin, NULL);
+            scanf("%[^\n]s",evento);
+            setbuf(stdin, NULL);
+    printf("\nInforme o horario Inicial e Final: ");
+            scanf("%[^\n]s",horario);
+    FILE *f18;
+    f18 = fopen("dezoito.bin", "a");
+    fprintf(f18,"\n******************************\n");
+    fprintf(f18,"\n************AGENDA************\n");
+    fprintf(f18,"\n******************************\n");
+    fprintf(f18,"\nEvento Marcado: ");
+    fprintf(f18,evento);
+    fprintf(f18,"\nHorario do Evento: ");
+    fputs(horario,f18);
+    fprintf(f18,"\n******************************\n");
+    fclose(f18);
+    printf("\a\a\nAgendamento concluído!\n");
+    }
+   if(data == 19){
+    printf("\nInforme o Evento: ");
+	 		setbuf(stdin, NULL);
+            scanf("%[^\n]s",evento);
+            setbuf(stdin, NULL);
+    printf("\nInforme o horario Inicial e Final: ");
+            scanf("%[^\n]s",horario);
+    FILE *f19;
+    f19 = fopen("dezenove.bin", "a");
+    fprintf(f19,"\n******************************\n");
+    fprintf(f19,"\n************AGENDA************\n");
+    fprintf(f19,"\n******************************\n");
+    fprintf(f19,"\nEvento Marcado: ");
+    fprintf(f19,evento);
+    fprintf(f19,"\nHorario do Evento: ");
+    fputs(horario,f19);
+    fprintf(f19,"\n******************************\n");
+    fclose(f19);
+    printf("\a\a\nAgendamento concluído!\n");
+    }
+    if(data == 20){
+    printf("\nInforme o Evento: ");
+	 		setbuf(stdin, NULL);
+            scanf("%[^\n]s",evento);
+            setbuf(stdin, NULL);
+    printf("\nInforme o horario Inicial e Final: ");
+            scanf("%[^\n]s",horario);
+    FILE *f20;
+    f20 = fopen("vinte.bin", "a");
+    fprintf(f20,"\n******************************\n");
+    fprintf(f20,"\n************AGENDA************\n");
+    fprintf(f20,"\n******************************\n");
+    fprintf(f20,"\nEvento Marcado: ");
+    fprintf(f20,evento);
+    fprintf(f20,"\nHorario do Evento: ");
+    fputs(horario,f20);
+    fprintf(f20,"\n******************************\n");
+    fclose(f20);
+    printf("\a\a\nAgendamento concluído!\n");
+    }
+    if(data == 21){
+     printf("\nInforme o Evento: ");
+	 		setbuf(stdin, NULL);
+            scanf("%[^\n]s",evento);
+            setbuf(stdin, NULL);
+    printf("\nInforme o horario Inicial e Final: ");
+            scanf("%[^\n]s",horario);
+    FILE *f21;
+    f21 = fopen("vinteum.bin", "a");
+    fprintf(f21,"\n******************************\n");
+    fprintf(f21,"\n************AGENDA************\n");
+    fprintf(f21,"\n******************************\n");
+    fprintf(f21,"\nEvento Marcado: ");
+    fprintf(f21,evento);
+    fprintf(f21,"\nHorario do Evento: ");
+    fputs(horario,f21);
+    fprintf(f21,"\n******************************\n");
+    fclose(f21);
+    printf("\a\a\nAgendamento concluído!\n");
+    }
+    if(data == 22){
+     printf("\nInforme o Evento: ");
+	 		setbuf(stdin, NULL);
+            scanf("%[^\n]s",evento);
+            setbuf(stdin, NULL);
+    printf("\nInforme o horario Inicial e Final: ");
+            scanf("%[^\n]s",horario);
+    FILE *f22;
+    f22 = fopen("vintedois.bin", "a");
+    fprintf(f22,"\n******************************\n");
+    fprintf(f22,"\n************AGENDA************\n");
+    fprintf(f22,"\n******************************\n");
+    fprintf(f22,"\nEvento Marcado: ");
+    fprintf(f22,evento);
+    fprintf(f22,"\nHorario do Evento: ");
+    fputs(horario,f22);
+    fprintf(f22,"\n******************************\n");
+    fclose(f22);
+    printf("\a\a\nAgendamento concluído!\n");
+    }
+    if(data == 23){
+    printf("\nInforme o Evento: ");
+	 		setbuf(stdin, NULL);
+            scanf("%[^\n]s",evento);
+            setbuf(stdin, NULL);
+    printf("\nInforme o horario Inicial e Final: ");
+            scanf("%[^\n]s",horario);
+    FILE *f23;
+    f23 = fopen("vintetres.bin", "a");
+    fprintf(f23,"\n******************************\n");
+    fprintf(f23,"\n************AGENDA************\n");
+    fprintf(f23,"\n******************************\n");
+    fprintf(f23,"\nEvento Marcado: ");
+    fprintf(f23,evento);
+    fprintf(f23,"\nHorario do Evento: ");
+    fputs(horario,f23);
+    fprintf(f23,"\n******************************\n");
+    fclose(f23);
+    printf("\a\a\nAgendamento concluído!\n");
+    }
+    if(data == 24){
+    printf("\nInforme o Evento: ");
+	 		setbuf(stdin, NULL);
+            scanf("%[^\n]s",evento);
+            setbuf(stdin, NULL);
+    printf("\nInforme o horario Inicial e Final: ");
+            scanf("%[^\n]s",horario);
+    FILE *f24;
+    f24 = fopen("vintequatro.bin", "a");
+    fprintf(f24,"\n******************************\n");
+    fprintf(f24,"\n************AGENDA************\n");
+    fprintf(f24,"\n******************************\n");
+    fprintf(f24,"\nEvento Marcado: ");
+    fprintf(f24,evento);
+    fprintf(f24,"\nHorario do Evento: ");
+    fputs(horario,f24);
+    fprintf(f24,"\n******************************\n");
+    fclose(f24);
+    printf("\a\a\nAgendamento concluído!\n");
+    }
+   if(data == 25){
+    printf("\nInforme o Evento: ");
+	 		setbuf(stdin, NULL);
+            scanf("%[^\n]s",evento);
+            setbuf(stdin, NULL);
+    printf("\nInforme o horario Inicial e Final: ");
+            scanf("%[^\n]s",horario);
+    FILE *f25;
+    f25 = fopen("vintecinco.bin", "a");
+    fprintf(f25,"\n******************************\n");
+    fprintf(f25,"\n************AGENDA************\n");
+    fprintf(f25,"\n******************************\n");
+    fprintf(f25,"\nEvento Marcado: ");
+    fprintf(f25,evento);
+    fprintf(f25,"\nHorario do Evento: ");
+    fputs(horario,f25);
+    fprintf(f25,"\n******************************\n");
+    fclose(f25);
+    printf("\a\a\nAgendamento concluído!\n");
+    }
+    if(data == 26){
+     printf("\nInforme o Evento: ");
+	 		setbuf(stdin, NULL);
+            scanf("%[^\n]s",evento);
+            setbuf(stdin, NULL);
+    printf("\nInforme o horario Inicial e Final: ");
+            scanf("%[^\n]s",horario);
+    FILE *f26;
+    f26 = fopen("vinteseis.bin", "a");
+    fprintf(f26,"\n******************************\n");
+    fprintf(f26,"\n************AGENDA************\n");
+    fprintf(f26,"\n******************************\n");
+    fprintf(f26,"\nEvento Marcado: ");
+    fprintf(f26,evento);
+    fprintf(f26,"\nHorario do Evento: ");
+    fputs(horario,f26);
+    fprintf(f26,"\n******************************\n");
+    fclose(f26);
+    printf("\a\a\nAgendamento concluído!\n");
+    }
+   if(data == 27){
+     printf("\nInforme o Evento: ");
+	 		setbuf(stdin, NULL);
+            scanf("%[^\n]s",evento);
+            setbuf(stdin, NULL);
+    printf("\nInforme o horario Inicial e Final: ");
+            scanf("%[^\n]s",horario);
+    FILE *f27;
+    f27 = fopen("vintesete.bin", "a");
+    fprintf(f27,"\n******************************\n");
+    fprintf(f27,"\n************AGENDA************\n");
+    fprintf(f27,"\n******************************\n");
+    fprintf(f27,"\nEvento Marcado: ");
+    fprintf(f27,evento);
+    fprintf(f27,"\nHorario do Evento: ");
+    fputs(horario,f27);
+    fprintf(f27,"\n******************************\n");
+    fclose(f27);
+    printf("\a\a\nAgendamento concluído!\n");
+    }
+    if(data == 28){
+    printf("\nInforme o Evento: ");
+	 		setbuf(stdin, NULL);
+            scanf("%[^\n]s",evento);
+            setbuf(stdin, NULL);
+    printf("\nInforme o horario Inicial e Final: ");
+            scanf("%[^\n]s",horario);
+    FILE *f28;
+    f28 = fopen("vinteoito.bin", "a");
+    fprintf(f28,"\n******************************\n");
+    fprintf(f28,"\n************AGENDA************\n");
+    fprintf(f28,"\n******************************\n");
+    fprintf(f28,"\nEvento Marcado: ");
+    fprintf(f28,evento);
+    fprintf(f28,"\nHorario do Evento: ");
+    fputs(horario,f28);
+    fprintf(f28,"\n******************************\n");
+    fclose(f28);
+    printf("\a\a\nAgendamento concluído!\n");
+    }
+    if(data == 29){
+    printf("\nInforme o Evento: ");
+	 		setbuf(stdin, NULL);
+            scanf("%[^\n]s",evento);
+            setbuf(stdin, NULL);
+    printf("\nInforme o horario Inicial e Final: ");
+            scanf("%[^\n]s",horario);
+    FILE *f29;
+    f29 = fopen("vintenove.bin", "a");
+    fprintf(f29,"\n******************************\n");
+    fprintf(f29,"\n************AGENDA************\n");
+    fprintf(f29,"\n******************************\n");
+    fprintf(f29,"\nEvento Marcado: ");
+    fprintf(f29,evento);
+    fprintf(f29,"\nHorario do Evento: ");
+    fputs(horario,f29);
+    fprintf(f29,"\n******************************\n");
+    fclose(f29);
+    printf("\a\a\nAgendamento concluído!\n");
+    }
+    if(data == 30){
+    printf("\nInforme o Evento: ");
+	 		setbuf(stdin, NULL);
+            scanf("%[^\n]s",evento);
+            setbuf(stdin, NULL);
+    printf("\nInforme o horario Inicial e Final: ");
+            scanf("%[^\n]s",horario);
+    FILE *f30;
+    f30 = fopen("trinta.bin", "a");
+    fprintf(f30,"\n******************************\n");
+    fprintf(f30,"\n************AGENDA************\n");
+    fprintf(f30,"\n******************************\n");
+    fprintf(f30,"\nEvento Marcado: ");
+    fprintf(f30,evento);
+    fprintf(f30,"\nHorario do Evento: ");
+    fputs(horario,f30);
+    fprintf(f30,"\n******************************\n");
+    fclose(f30);
+    printf("\a\a\nAgendamento concluído!\n");
+    }
+   if(data == 31){
+     printf("\nInforme o Evento: ");
+	 		setbuf(stdin, NULL);
+            scanf("%[^\n]s",evento);
+            setbuf(stdin, NULL);
+    printf("\nInforme o horario Inicial e Final: ");
+            scanf("%[^\n]s",horario);
+    FILE *f31;
+    f31 = fopen("trintaeum.bin", "a");
+    fprintf(f31,"\n******************************\n");
+    fprintf(f31,"\n************AGENDA************\n");
+    fprintf(f31,"\n******************************\n");
+    fprintf(f31,"\nEvento Marcado: ");
+    fprintf(f31,evento);
+    fprintf(f31,"\nHorario do Evento: ");
+    fputs(horario,f31);
+    fprintf(f31,"\n******************************\n");
+    fclose(f31);
+    printf("\a\a\nAgendamento concluído!\n");
+    }
+    }                                              //Fechamento da Opção de Agendar
+    if(opcao == 2){                               //Inicio Da Opção de Leitura da Agenda
+		if(data== 1){
+    FILE *f1;
+    f1 = fopen("um.bin", "r");
+    if(f1 == NULL){
+    printf("\a\a\nNão Existe Agenda Para Esse Dia Ainda.\n");
+    getchar();
+    }else{
+        printf("\aArquivo Carregado Com Sucesso!\n");
+        while(fgets(agenda,500,f1) != NULL){
+        printf("%s",agenda);
+        }
+         fclose(f1);
+    }
+    }
+        if(data== 2){
+    FILE *f2;
+    f2 = fopen("dois.bin", "r");
+    if(f2 == NULL){
+    printf("\a\a\nNão Existe Agenda Para Esse Dia Ainda.\n");
+    getchar();
+    }else{
+        printf("\aArquivo Carregado Com Sucesso!\n");
+        while(fgets(agenda,500,f2) != NULL){
+        printf("%s",agenda);
+        }
+        fclose(f2);
+    }
+    }
+        if(data== 3){
+    FILE *f3;
+    f3 = fopen("tres.bin", "r");
+    if(f3 == NULL){
+    printf("\a\a\nNão Existe Agenda Para Esse Dia Ainda.\n");
+    getchar();
+    }else{
+        printf("\aArquivo Carregado Com Sucesso\n");
+        while(fgets(agenda,500,f3) != NULL){
+        printf("%s",agenda);
+            }
+        fclose(f3);
+    }
+    }
+        if(data== 4){
+    FILE *f4;
+    f4 = fopen("quatro.bin", "r");
+    if(f4 == NULL){
+    printf("\a\a\nNão Existe Agenda Para Esse Dia Ainda.\n");
+    getchar();
+    }else{
+        printf("\aArquivo Carregado Com Sucesso!\n");
+        while(fgets(agenda,500,f4) != NULL){
+        printf("%s",agenda);
+        }
+        fclose(f4);
+    }
+    }
+        if(data== 5){
+    FILE *f5;
+    f5 = fopen("cinco.bin", "r");
+    if(f5 == NULL){
+    printf("\a\a\nNão Existe Agenda Para Esse Dia Ainda.\n");
+    getchar();
+    }else{
+        printf("\aArquivo Carregado Com Sucesso!\n");
+        while(fgets(agenda,500,f5) != NULL){
+        printf("%s",agenda);
+        }
+        fclose(f5);
+    }
+    }
+        if(data== 6){
+    FILE *f6;
+    f6 = fopen("seis.bin", "r");
+    if(f6 == NULL){
+    printf("\a\a\nNão Existe Agenda Para Esse Dia Ainda.\n");
+    getchar();
+    }else{
+        printf("\aArquivo Carregado Com Sucesso!\n");
+        while(fgets(agenda,500,f6) != NULL){
+        printf("%s",agenda);
+            }
+            fclose(f6);
+    }
+    }
+        if(data== 7){
+    FILE *f7;
+    f7 = fopen("sete.bin", "r");
+    if(f7 == NULL){
+    printf("\a\a\nNão Existe Agenda Para Esse Dia Ainda.\n");
+    getchar();
+    }else{
+        printf("\aArquivo Carregado Com Sucesso!\n");
+        while(fgets(agenda,500,f7) != NULL){
+        printf("%s",agenda);
+            }
+            fclose(f7);
+    }
+    }
+        if(data== 8){
+    FILE *f8;
+    f8 = fopen("oito.bin", "r");
+    if(f8 == NULL){
+    printf("\a\a\nNão Existe Agenda Para Esse Dia Ainda.\n");
+    getchar();
+    }else{
+        printf("\aArquivo Carregado Com Sucesso!\n");
+        while(fgets(agenda,500,f8) != NULL){
+        printf("%s",agenda);
+            }
+            fclose(f8);
+    }
+    }
+        if(data== 9){
+    FILE *f9;
+    f9 = fopen("nove.bin", "r");
+    if(f9 == NULL){
+    printf("\a\a\nNão Existe Agenda Para Esse Dia Ainda.\n");
+    getchar();
+    }else{
+        printf("\aArquivo Carregado Com Sucesso!\n");
+        while(fgets(agenda,500,f9) != NULL){
+        printf("%s",agenda);
+            }
+            fclose(f9);
+    }
+    }
+        if(data== 10){
+    FILE *f10;
+    f10 = fopen("dez.bin", "r");
+    if(f10 == NULL){
+    printf("\a\a\nNão Existe Agenda Para Esse Dia Ainda.\n");
+    getchar();
+    }else{
+        printf("\aArquivo Carregado Com Sucesso!\n");
+        while(fgets(agenda,500,f10) != NULL){
+        printf("%s",agenda);
+            }
+            fclose(f10);
+    }
+    }
+        if(data== 11){
+    FILE *f11;
+    f11 = fopen("onze.bin", "r");
+    if(f11 == NULL){
+    printf("\a\a\nNão Existe Agenda Para Esse Dia Ainda.\n");
+    getchar();
+    }else{
+        printf("\aArquivo Carregado Com Sucesso!\n");
+        while(fgets(agenda,500,f11) != NULL){
+        printf("%s",agenda);
+        }
+        fclose(f11);
+    }
+    }
+        if(data== 12){
+    FILE *f12;
+    f12 = fopen("doze.bin", "r");
+    if(f12 == NULL){
+    printf("\a\a\nNão Existe Agenda Para Esse Dia Ainda.\n");
+    getchar();
+    }else{
+        printf("\aArquivo Carregado Com Sucesso!\n");
+        while(fgets(agenda,500,f12) != NULL){
+        printf("%s",agenda);
+            }
+            fclose(f12);
+    }
+    }
+            if(data== 13){
+    FILE *f13;
+    f13 = fopen("treze.bin", "r");
+    if(f13 == NULL){
+    printf("\a\a\nNão Existe Agenda Para Esse Dia Ainda.\n");
+    getchar();
+    }else{
+        printf("\aArquivo Carregado Com Sucesso!\n");
+        while(fgets(agenda,500,f13) != NULL){
+        printf("%s",agenda);
+            }
+            fclose(f13);
+    }
+    }
+            if(data== 14){
+    FILE *f14;
+    f14 = fopen("quatorze.bin", "r");
+    if(f14 == NULL){
+    printf("\a\a\nNão Existe Agenda Para Esse Dia Ainda.\n");
+    getchar();
+    }else{
+        printf("\aArquivo Carregado Com Sucesso!\n");
+        while(fgets(agenda,500,f14) != NULL){
+        printf("%s",agenda);
+            }
+            fclose(f14);
+    }
+}
+
+            if(data== 15){
+    FILE *f15;
+    f15 = fopen("quinze.bin", "r");
+    if(f15 == NULL){
+    printf("\a\a\nNão Existe Agenda Para Esse Dia Ainda.\n");
+    getchar();
+    }else{
+        printf("\aArquivo Carregado Com Sucesso!\n");
+        while(fgets(agenda,500,f15) != NULL){
+        printf("%s",agenda);
+            }
+            fclose(f15);
+    }
+    }
+            if(data== 16){
+    FILE *f16;
+    f16 = fopen("dezesseis.bin", "r");
+    if(f16 == NULL){
+    printf("\a\a\nNão Existe Agenda Para Esse Dia Ainda.\n");
+    getchar();
+    }else{
+        printf("\aArquivo Carregado Com Sucesso!\n");
+        while(fgets(agenda,500,f16) != NULL){
+        printf("%s",agenda);
+            }
+            fclose(f16);
+    }
+    }
+            if(data== 17){
+    FILE *f17;
+    f17 = fopen("dezessete.bin", "r");
+    if(f17 == NULL){
+    printf("\a\a\nNão Existe Agenda Para Esse Dia Ainda.\n");
+    getchar();
+    }else{
+        printf("\aArquivo Carregado Com Sucesso!\n");
+        while(fgets(agenda,500,f17) != NULL){
+        printf("%s",agenda);
+            }
+            fclose(f17);
+    }
+    }
+            if(data== 18){
+    FILE *f18;
+    f18 = fopen("dezoito.bin", "r");
+    if(f18 == NULL){
+    printf("\a\a\nNão Existe Agenda Para Esse Dia Ainda.\n");
+    getchar();
+    }else{
+        printf("\aArquivo Carregado Com Sucesso!\n");
+        while(fgets(agenda,500,f18) != NULL){
+        printf("%s",agenda);
+            }
+            fclose(f18);
+    }
+    }
+            if(data== 19){
+    FILE *f19;
+    f19 = fopen("dezenove.bin", "r");
+    if(f19 == NULL){
+        printf("\a\a\nNão Existe Agenda Para Esse Dia Ainda.\n");
+    getchar();
+    }else{
+        printf("\aArquivo Carregado Com Sucesso!\n");
+        while(fgets(agenda,500,f19) != NULL){
+        printf("%s",agenda);
+            }
+            fclose(f19);
+    }
+    }
+            if(data== 20){
+    FILE *f20;
+    f20 = fopen("vinte.bin", "r");
+    if(f20 == NULL){
+        printf("\a\a\nNão Existe Agenda Para Esse Dia Ainda.\n");
+    getchar();
+    }else{
+        printf("\aArquivo Carregado Com Sucesso!\n");
+        while(fgets(agenda,500,f20) != NULL){
+        printf("%s",agenda);
+            }
+            fclose(f20);
+    }
+    }
+            if(data== 21){
+    FILE *f21;
+    f21 = fopen("vinteum.bin", "r");
+    if(f21 == NULL){
+    printf("\a\a\nNão Existe Agenda Para Esse Dia Ainda.\n");
+    getchar();
+    }else{
+        printf("\aArquivo Carregado Com Sucesso!\n");
+        while(fgets(agenda,500,f21) != NULL){
+        printf("%s",agenda);
+            }
+            fclose(f21);
+    }
+    }
+            if(data== 22){
+    FILE *f22;
+    f22 = fopen("vintedois.bin", "r");
+    if(f22 == NULL){
+        printf("\a\a\nNão Existe Agenda Para Esse Dia Ainda.\n");
+    getchar();
+    }else{
+        printf("\aArquivo Carregado Com Sucesso!\n");
+        while(fgets(agenda,500,f22) != NULL){
+        printf("%s",agenda);
+            }
+            fclose(f22);
+    }
+    }
+            if(data== 23){
+    FILE *f23;
+    f23 = fopen("vintetres.bin", "r");
+    if(f23 == NULL){
+    printf("\a\a\nNão Existe Agenda Para Esse Dia Ainda.\n");
+    getchar();
+    }else{
+        printf("\aArquivo Carregado Com Sucesso!\n");
+        while(fgets(agenda,500,f23) != NULL){
+        printf("%s",agenda);
+            }
+            fclose(f23);
+    }
+    }
+            if(data== 24){
+    FILE *f24;
+    f24 = fopen("vintequatro.bin", "r");
+    if(f24 == NULL){
+    printf("\a\a\nNão Existe Agenda Para Esse Dia Ainda.\n");
+    getchar();
+    }else{
+        printf("\aArquivo Carregado Com Sucesso!\n");
+        while(fgets(agenda,500,f24) != NULL){
+        printf("%s",agenda);
+            }
+            fclose(f24);
+    }
+    }
+            if(data== 25){
+    FILE *f25;
+    f25 = fopen("vintecinco.bin", "r");
+    if(f25 == NULL){
+        printf("\a\a\nNão Existe Agenda Para Esse Dia Ainda.\n");
+    getchar();
+    }else{
+        printf("\aArquivo Carregado Com Sucesso!\n");
+        while(fgets(agenda,500,f25) != NULL){
+        printf("%s",agenda);
+            }
+            fclose(f25);
+    }
+    }
+            if(data== 26){
+    FILE *f26;
+    f26 = fopen("vinteseis.bin", "r");
+    if(f26 == NULL){
+    printf("\a\a\nNão Existe Agenda Para Esse Dia Ainda.\n");
+    getchar();
+    }else{
+        printf("\aArquivo Carregado Com Sucesso!\n");
+        while(fgets(agenda,500,f26) != NULL){
+        printf("%s",agenda);
+            }
+            fclose(f26);
+    }
+    }
+            if(data== 27){
+    FILE *f27;
+    f27 = fopen("vintesete.bin", "r");
+    if(f27 == NULL){
+    printf("\a\a\nNão Existe Agenda Para Esse Dia Ainda.\n");
+    getchar();
+    }else{
+        printf("\aArquivo Carregado Com Sucesso!\n");
+        while(fgets(agenda,500,f27) != NULL){
+        printf("%s",agenda);
+            }
+            fclose(f27);
+    }
+    }
+            if(data== 28){
+    FILE *f28;
+    f28 = fopen("vinteoito.bin", "r");
+    if(f28 == NULL){
+        printf("\a\a\nNão Existe Agenda Para Esse Dia Ainda\n.");
+    getchar();
+    }else{
+        printf("\aArquivo Carregado Com Sucesso!\n");
+        while(fgets(agenda,500,f28) != NULL){
+        printf("%s",agenda);
+            }
+            fclose(f28);
+    }
+    }
+            if(data== 29){
+    FILE *f29;
+    f29 = fopen("vintenove.bin", "r");
+    if(f29 == NULL){
+    printf("\a\a\nNão Existe Agenda Para Esse Dia Ainda\n.");
+    getchar();
+    }else{
+        printf("\aArquivo Carregado Com Sucesso!\n");
+        while(fgets(agenda,500,f29) != NULL){
+        printf("%s",agenda);
+            }
+            fclose(f29);
+    }
+    }
+            if(data== 30){
+    FILE *f30;
+    f30 = fopen("trinta.bin", "r");
+    if(f30 == NULL){
+    printf("\a\a\nNão Existe Agenda Para Esse Dia Ainda\n.");
+    getchar();
+    }else{
+        printf("\aArquivo Carregado Com Sucesso!\n");
+        while(fgets(agenda,500,f30) != NULL){
+        printf("%s",agenda);
+            }
+            fclose(f30);
+    }
+    }
+            if(data== 31){                           //Aqui começa a contagem de trintaeum !
+    FILE *f31;
+    f31 = fopen("trintaeum.bin", "r");
+    if(f31 == NULL){
+    printf("\a\a\nNão Existe Agenda Para Esse Dia Ainda\n.");
+    getchar();
+    }else{
+        printf("\aArquivo Carregado Com Sucesso!\n");
+        while(fgets(agenda,500,f31) != NULL){
+        printf("%s",agenda);
+                }
+            fclose(f31);
+    }
+	}
+}													   //Fechamento da Opção de Leitura
+	if(opcao==3){                                      //Opção de Feriados de Dezembro
+		printf("Feriados Dezembro 2015\n");
+		FILE *fe;
+    fe = fopen("feriados.txt", "r");
+    if(fe == NULL){
+    printf("\a\a\nNão foi Possivel abrir o Arquivo.");
+    getchar();
+    exit(0);
+    }else{
+        printf("\aArquivo Carregado Com Sucesso!\n");
+        while(fgets(agenda,500,fe) != NULL){
+        printf("%s\n",agenda);
+                }
+            fclose(fe);
+	}
+}
+system("pause");
+system("cls");
+}
+}                                                 //Final do Programa antes do Titulo
+    void titulo(void){                           // Função que exibe titulo
+    printf("********************\n");
+    printf("    DEZEMBRO 2015   \n");
+    printf("********************\n");
+    printf("D  S  T  Q  Q  S  S \n");
+    return;
+	}
