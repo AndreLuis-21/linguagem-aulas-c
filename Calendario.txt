@@ -1,8 +1,8 @@
 
-/*7.Crie um calend·rio do mÍs atual em C e faÁa uma agenda baseado nesse calend·rio para ajudar a organizar suas atividades.
+/*7.Crie um calend√°rio do m√™s atual em C e fa√ßa uma agenda baseado nesse calend√°rio para ajudar a organizar suas atividades.
 As atividades registradas tem hora de inicio e de termino;
-N„o pode ha ver duas agendas no mesmo perÌodo j· utilizado;
-Cada dia poder· ser registrado atÈ o total de 3 atividades;*/
+N√£o pode ha ver duas agendas no mesmo per√≠odo j√° utilizado;
+Cada dia poder√° ser registrado at√© o total de 3 atividades;*/
 
 //obs: Criar TXT com Feriados
 #include <stdio.h>
@@ -31,17 +31,17 @@ printf("\n*           [3] Consultar Feriados                   *");
 printf("\n*                    [4] Sair                        *");
 printf("\n******************************************************\n");
 printf("*******OBS******\n");
-printf("1∞- So È PossÌvel Marcar 3 Agendamentos Por dia.\n");
-printf("2∞- Ficar Atento Ao Hor·rio Dos Evento Para Evitar Confronto.\n");
-printf("3∞- N„o È Necess·rio Inserir o N˙mero 0 nas Datas abaixo de 10\n");
-printf("4∞- Programa Criado Por: AndrÈ LuÌs,Erivan Enock e Felicio Gabriel.");
+printf("1¬∞- So √© Poss√≠vel Marcar 3 Agendamentos Por dia.\n");
+printf("2¬∞- Ficar Atento Ao Hor√°rio Dos Evento Para Evitar Confronto.\n");
+printf("3¬∞- N√£o √© Necess√°rio Inserir o N√∫mero 0 nas Datas abaixo de 10\n");
+printf("4¬∞- Programa Criado Por: Andr√© Lu√≠s,Erivan Enock e Felicio Gabriel.");
 printf("\n");
 printf("\n");
-printf("Escolha a OpÁ„o.:");
+printf("Escolha a Op√ß√£o.:");
     scanf("%i",&opcao);
 system("cls");
 titulo();
-int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativa do calend·rio
+int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativa do calend√°rio
                  {6,7,8,9,10,11,12},
                  {13,14,15,16,17,18,19},
                  {20,21,22,23,24,25,26},
@@ -53,7 +53,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     printf("\n\n");
 }
 		   if(opcao>4){
-		   printf("\aOpÁ„o Incorreta, Selecione Outra Por Favor\n");
+		   printf("\aOp√ß√£o Incorreta, Selecione Outra Por Favor\n");
 		   ;}
 	if(opcao==1){
     printf("\nInforme a Data Desejada: ");
@@ -71,7 +71,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
             printf("Agendamento cancelado\n");
     	}
     }
-    if (opcao == 1){                                         //Inicio da OpÁ„o de Agendar
+    if (opcao == 1){                                         //Inicio da Op√ß√£o de Agendar
 	if(data== 1){
      printf("\nInforme o Evento: ");
 	 		setbuf(stdin, NULL);
@@ -90,7 +90,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     fputs(horario,f1);
     fprintf(f1,"\n******************************\n");
     fclose(f1);
-    printf("\a\nAgendamento concluÌdo!\n");
+    printf("\a\nAgendamento conclu√≠do!\n");
     }
 
     if(data == 2){
@@ -111,7 +111,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     fputs(horario,f2);
     fprintf(f2,"\n******************************\n");
     fclose(f2);
-    printf("\a\a\nAgendamento concluÌdo!\n");
+    printf("\a\a\nAgendamento conclu√≠do!\n");
 	}
 
      if(data == 3){
@@ -132,7 +132,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     fputs(horario,f3);
     fprintf(f3,"\n******************************\n");
     fclose(f3);
-    printf("\a\a\nAgendamento concluÌdo!\n");
+    printf("\a\a\nAgendamento conclu√≠do!\n");
     }
 
     if(data == 4){
@@ -153,7 +153,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     fputs(horario,f4);
     fprintf(f4,"\n******************************\n");
     fclose(f4);
-    printf("\a\a\nAgendamento concluÌdo!\n");
+    printf("\a\a\nAgendamento conclu√≠do!\n");
     }
     if(data == 5){
      printf("\nInforme o Evento: ");
@@ -173,7 +173,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     fputs(horario,f5);
     fprintf(f5,"\n******************************\n");
     fclose(f5);
-    printf("\a\a\nAgendamento concluÌdo!\n");
+    printf("\a\a\nAgendamento conclu√≠do!\n");
     }
     if(data == 6){
      printf("\nInforme o Evento: ");
@@ -193,7 +193,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     fputs(horario,f6);
     fprintf(f6,"\n******************************\n");
     fclose(f6);
-    printf("\a\a\nAgendamento concluÌdo!\n");
+    printf("\a\a\nAgendamento conclu√≠do!\n");
     }
     if(data == 7){
      printf("\nInforme o Evento: ");
@@ -213,7 +213,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     fputs(horario,f7);
     fprintf(f7,"\n******************************\n");
     fclose(f7);
-    printf("\a\a\nAgendamento concluÌdo!\n");
+    printf("\a\a\nAgendamento conclu√≠do!\n");
     }
     if(data == 8){
      printf("\nInforme o Evento: ");
@@ -233,7 +233,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     fputs(horario,f8);
     fprintf(f8,"\n******************************\n");
     fclose(f8);
-    printf("\a\a\nAgendamento concluÌdo!\n");
+    printf("\a\a\nAgendamento conclu√≠do!\n");
     }
     if(data == 9){
      printf("\nInforme o Evento: ");
@@ -253,7 +253,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     fputs(horario,f9);
     fprintf(f9,"\n******************************\n");
     fclose(f9);
-    printf("\a\a\nAgendamento concluÌdo!\n");
+    printf("\a\a\nAgendamento conclu√≠do!\n");
     }
     if(data == 10){
      printf("\nInforme o Evento: ");
@@ -273,7 +273,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     fputs(horario,f10);
     fprintf(f10,"\n******************************\n");
     fclose(f10);
-    printf("\a\a\nAgendamento concluÌdo!\n");
+    printf("\a\a\nAgendamento conclu√≠do!\n");
     }
     if(data == 11){
 	printf("\nInforme o Evento: ");
@@ -293,7 +293,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     fputs(horario,f11);
     fprintf(f11,"\n******************************\n");
     fclose(f11);
-    printf("\a\a\nAgendamento concluÌdo!\n");
+    printf("\a\a\nAgendamento conclu√≠do!\n");
     }
     if(data == 12){
     printf("\nInforme o Evento: ");
@@ -313,7 +313,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     fputs(horario,f12);
     fprintf(f12,"\n******************************\n");
     fclose(f12);
-    printf("\a\a\nAgendamento concluÌdo!\n");
+    printf("\a\a\nAgendamento conclu√≠do!\n");
     }
     if(data == 13){
     printf("\nInforme o Evento: ");
@@ -333,7 +333,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     fputs(horario,f13);
     fprintf(f13,"\n******************************\n");
     fclose(f13);
-    printf("\a\a\nAgendamento concluÌdo!\n");
+    printf("\a\a\nAgendamento conclu√≠do!\n");
     }
     if(data == 14){
     printf("\nInforme o Evento: ");
@@ -353,7 +353,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     fputs(horario,f14);
     fprintf(f14,"\n******************************\n");
     fclose(f14);
-    printf("\a\a\nAgendamento concluÌdo!\n");
+    printf("\a\a\nAgendamento conclu√≠do!\n");
     }
     if(data == 15){
     printf("\nInforme o Evento: ");
@@ -373,7 +373,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     fputs(horario,f15);
     fprintf(f15,"\n******************************\n");
     fclose(f15);
-    printf("\a\a\nAgendamento concluÌdo!\n");
+    printf("\a\a\nAgendamento conclu√≠do!\n");
     }
     if(data == 16){
      printf("\nInforme o Evento: ");
@@ -393,7 +393,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     fputs(horario,f16);
     fprintf(f16,"\n******************************\n");
     fclose(f16);
-    printf("\a\a\nAgendamento concluÌdo!\n");
+    printf("\a\a\nAgendamento conclu√≠do!\n");
     }
     if(data == 17){
      printf("\nInforme o Evento: ");
@@ -413,7 +413,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     fputs(horario,f17);
     fprintf(f17,"\n******************************\n");
     fclose(f17);
-    printf("\a\a\nAgendamento concluÌdo!\n");
+    printf("\a\a\nAgendamento conclu√≠do!\n");
     }
     if(data == 18){
     printf("\nInforme o Evento: ");
@@ -433,7 +433,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     fputs(horario,f18);
     fprintf(f18,"\n******************************\n");
     fclose(f18);
-    printf("\a\a\nAgendamento concluÌdo!\n");
+    printf("\a\a\nAgendamento conclu√≠do!\n");
     }
    if(data == 19){
     printf("\nInforme o Evento: ");
@@ -453,7 +453,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     fputs(horario,f19);
     fprintf(f19,"\n******************************\n");
     fclose(f19);
-    printf("\a\a\nAgendamento concluÌdo!\n");
+    printf("\a\a\nAgendamento conclu√≠do!\n");
     }
     if(data == 20){
     printf("\nInforme o Evento: ");
@@ -473,7 +473,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     fputs(horario,f20);
     fprintf(f20,"\n******************************\n");
     fclose(f20);
-    printf("\a\a\nAgendamento concluÌdo!\n");
+    printf("\a\a\nAgendamento conclu√≠do!\n");
     }
     if(data == 21){
      printf("\nInforme o Evento: ");
@@ -493,7 +493,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     fputs(horario,f21);
     fprintf(f21,"\n******************************\n");
     fclose(f21);
-    printf("\a\a\nAgendamento concluÌdo!\n");
+    printf("\a\a\nAgendamento conclu√≠do!\n");
     }
     if(data == 22){
      printf("\nInforme o Evento: ");
@@ -513,7 +513,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     fputs(horario,f22);
     fprintf(f22,"\n******************************\n");
     fclose(f22);
-    printf("\a\a\nAgendamento concluÌdo!\n");
+    printf("\a\a\nAgendamento conclu√≠do!\n");
     }
     if(data == 23){
     printf("\nInforme o Evento: ");
@@ -533,7 +533,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     fputs(horario,f23);
     fprintf(f23,"\n******************************\n");
     fclose(f23);
-    printf("\a\a\nAgendamento concluÌdo!\n");
+    printf("\a\a\nAgendamento conclu√≠do!\n");
     }
     if(data == 24){
     printf("\nInforme o Evento: ");
@@ -553,7 +553,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     fputs(horario,f24);
     fprintf(f24,"\n******************************\n");
     fclose(f24);
-    printf("\a\a\nAgendamento concluÌdo!\n");
+    printf("\a\a\nAgendamento conclu√≠do!\n");
     }
    if(data == 25){
     printf("\nInforme o Evento: ");
@@ -573,7 +573,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     fputs(horario,f25);
     fprintf(f25,"\n******************************\n");
     fclose(f25);
-    printf("\a\a\nAgendamento concluÌdo!\n");
+    printf("\a\a\nAgendamento conclu√≠do!\n");
     }
     if(data == 26){
      printf("\nInforme o Evento: ");
@@ -593,7 +593,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     fputs(horario,f26);
     fprintf(f26,"\n******************************\n");
     fclose(f26);
-    printf("\a\a\nAgendamento concluÌdo!\n");
+    printf("\a\a\nAgendamento conclu√≠do!\n");
     }
    if(data == 27){
      printf("\nInforme o Evento: ");
@@ -613,7 +613,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     fputs(horario,f27);
     fprintf(f27,"\n******************************\n");
     fclose(f27);
-    printf("\a\a\nAgendamento concluÌdo!\n");
+    printf("\a\a\nAgendamento conclu√≠do!\n");
     }
     if(data == 28){
     printf("\nInforme o Evento: ");
@@ -633,7 +633,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     fputs(horario,f28);
     fprintf(f28,"\n******************************\n");
     fclose(f28);
-    printf("\a\a\nAgendamento concluÌdo!\n");
+    printf("\a\a\nAgendamento conclu√≠do!\n");
     }
     if(data == 29){
     printf("\nInforme o Evento: ");
@@ -653,7 +653,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     fputs(horario,f29);
     fprintf(f29,"\n******************************\n");
     fclose(f29);
-    printf("\a\a\nAgendamento concluÌdo!\n");
+    printf("\a\a\nAgendamento conclu√≠do!\n");
     }
     if(data == 30){
     printf("\nInforme o Evento: ");
@@ -673,7 +673,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     fputs(horario,f30);
     fprintf(f30,"\n******************************\n");
     fclose(f30);
-    printf("\a\a\nAgendamento concluÌdo!\n");
+    printf("\a\a\nAgendamento conclu√≠do!\n");
     }
    if(data == 31){
      printf("\nInforme o Evento: ");
@@ -693,15 +693,15 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     fputs(horario,f31);
     fprintf(f31,"\n******************************\n");
     fclose(f31);
-    printf("\a\a\nAgendamento concluÌdo!\n");
+    printf("\a\a\nAgendamento conclu√≠do!\n");
     }
-    }                                              //Fechamento da OpÁ„o de Agendar
-    if(opcao == 2){                               //Inicio Da OpÁ„o de Leitura da Agenda
+    }                                              //Fechamento da Op√ß√£o de Agendar
+    if(opcao == 2){                               //Inicio Da Op√ß√£o de Leitura da Agenda
 		if(data== 1){
     FILE *f1;
     f1 = fopen("um.bin", "r");
     if(f1 == NULL){
-    printf("\a\a\nN„o Existe Agenda Para Esse Dia Ainda.\n");
+    printf("\a\a\nN√£o Existe Agenda Para Esse Dia Ainda.\n");
     getchar();
     }else{
         printf("\aArquivo Carregado Com Sucesso!\n");
@@ -715,7 +715,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     FILE *f2;
     f2 = fopen("dois.bin", "r");
     if(f2 == NULL){
-    printf("\a\a\nN„o Existe Agenda Para Esse Dia Ainda.\n");
+    printf("\a\a\nN√£o Existe Agenda Para Esse Dia Ainda.\n");
     getchar();
     }else{
         printf("\aArquivo Carregado Com Sucesso!\n");
@@ -729,7 +729,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     FILE *f3;
     f3 = fopen("tres.bin", "r");
     if(f3 == NULL){
-    printf("\a\a\nN„o Existe Agenda Para Esse Dia Ainda.\n");
+    printf("\a\a\nN√£o Existe Agenda Para Esse Dia Ainda.\n");
     getchar();
     }else{
         printf("\aArquivo Carregado Com Sucesso\n");
@@ -743,7 +743,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     FILE *f4;
     f4 = fopen("quatro.bin", "r");
     if(f4 == NULL){
-    printf("\a\a\nN„o Existe Agenda Para Esse Dia Ainda.\n");
+    printf("\a\a\nN√£o Existe Agenda Para Esse Dia Ainda.\n");
     getchar();
     }else{
         printf("\aArquivo Carregado Com Sucesso!\n");
@@ -757,7 +757,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     FILE *f5;
     f5 = fopen("cinco.bin", "r");
     if(f5 == NULL){
-    printf("\a\a\nN„o Existe Agenda Para Esse Dia Ainda.\n");
+    printf("\a\a\nN√£o Existe Agenda Para Esse Dia Ainda.\n");
     getchar();
     }else{
         printf("\aArquivo Carregado Com Sucesso!\n");
@@ -771,7 +771,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     FILE *f6;
     f6 = fopen("seis.bin", "r");
     if(f6 == NULL){
-    printf("\a\a\nN„o Existe Agenda Para Esse Dia Ainda.\n");
+    printf("\a\a\nN√£o Existe Agenda Para Esse Dia Ainda.\n");
     getchar();
     }else{
         printf("\aArquivo Carregado Com Sucesso!\n");
@@ -785,7 +785,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     FILE *f7;
     f7 = fopen("sete.bin", "r");
     if(f7 == NULL){
-    printf("\a\a\nN„o Existe Agenda Para Esse Dia Ainda.\n");
+    printf("\a\a\nN√£o Existe Agenda Para Esse Dia Ainda.\n");
     getchar();
     }else{
         printf("\aArquivo Carregado Com Sucesso!\n");
@@ -799,7 +799,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     FILE *f8;
     f8 = fopen("oito.bin", "r");
     if(f8 == NULL){
-    printf("\a\a\nN„o Existe Agenda Para Esse Dia Ainda.\n");
+    printf("\a\a\nN√£o Existe Agenda Para Esse Dia Ainda.\n");
     getchar();
     }else{
         printf("\aArquivo Carregado Com Sucesso!\n");
@@ -813,7 +813,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     FILE *f9;
     f9 = fopen("nove.bin", "r");
     if(f9 == NULL){
-    printf("\a\a\nN„o Existe Agenda Para Esse Dia Ainda.\n");
+    printf("\a\a\nN√£o Existe Agenda Para Esse Dia Ainda.\n");
     getchar();
     }else{
         printf("\aArquivo Carregado Com Sucesso!\n");
@@ -827,7 +827,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     FILE *f10;
     f10 = fopen("dez.bin", "r");
     if(f10 == NULL){
-    printf("\a\a\nN„o Existe Agenda Para Esse Dia Ainda.\n");
+    printf("\a\a\nN√£o Existe Agenda Para Esse Dia Ainda.\n");
     getchar();
     }else{
         printf("\aArquivo Carregado Com Sucesso!\n");
@@ -841,7 +841,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     FILE *f11;
     f11 = fopen("onze.bin", "r");
     if(f11 == NULL){
-    printf("\a\a\nN„o Existe Agenda Para Esse Dia Ainda.\n");
+    printf("\a\a\nN√£o Existe Agenda Para Esse Dia Ainda.\n");
     getchar();
     }else{
         printf("\aArquivo Carregado Com Sucesso!\n");
@@ -855,7 +855,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     FILE *f12;
     f12 = fopen("doze.bin", "r");
     if(f12 == NULL){
-    printf("\a\a\nN„o Existe Agenda Para Esse Dia Ainda.\n");
+    printf("\a\a\nN√£o Existe Agenda Para Esse Dia Ainda.\n");
     getchar();
     }else{
         printf("\aArquivo Carregado Com Sucesso!\n");
@@ -869,7 +869,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     FILE *f13;
     f13 = fopen("treze.bin", "r");
     if(f13 == NULL){
-    printf("\a\a\nN„o Existe Agenda Para Esse Dia Ainda.\n");
+    printf("\a\a\nN√£o Existe Agenda Para Esse Dia Ainda.\n");
     getchar();
     }else{
         printf("\aArquivo Carregado Com Sucesso!\n");
@@ -883,7 +883,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     FILE *f14;
     f14 = fopen("quatorze.bin", "r");
     if(f14 == NULL){
-    printf("\a\a\nN„o Existe Agenda Para Esse Dia Ainda.\n");
+    printf("\a\a\nN√£o Existe Agenda Para Esse Dia Ainda.\n");
     getchar();
     }else{
         printf("\aArquivo Carregado Com Sucesso!\n");
@@ -898,7 +898,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     FILE *f15;
     f15 = fopen("quinze.bin", "r");
     if(f15 == NULL){
-    printf("\a\a\nN„o Existe Agenda Para Esse Dia Ainda.\n");
+    printf("\a\a\nN√£o Existe Agenda Para Esse Dia Ainda.\n");
     getchar();
     }else{
         printf("\aArquivo Carregado Com Sucesso!\n");
@@ -912,7 +912,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     FILE *f16;
     f16 = fopen("dezesseis.bin", "r");
     if(f16 == NULL){
-    printf("\a\a\nN„o Existe Agenda Para Esse Dia Ainda.\n");
+    printf("\a\a\nN√£o Existe Agenda Para Esse Dia Ainda.\n");
     getchar();
     }else{
         printf("\aArquivo Carregado Com Sucesso!\n");
@@ -926,7 +926,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     FILE *f17;
     f17 = fopen("dezessete.bin", "r");
     if(f17 == NULL){
-    printf("\a\a\nN„o Existe Agenda Para Esse Dia Ainda.\n");
+    printf("\a\a\nN√£o Existe Agenda Para Esse Dia Ainda.\n");
     getchar();
     }else{
         printf("\aArquivo Carregado Com Sucesso!\n");
@@ -940,7 +940,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     FILE *f18;
     f18 = fopen("dezoito.bin", "r");
     if(f18 == NULL){
-    printf("\a\a\nN„o Existe Agenda Para Esse Dia Ainda.\n");
+    printf("\a\a\nN√£o Existe Agenda Para Esse Dia Ainda.\n");
     getchar();
     }else{
         printf("\aArquivo Carregado Com Sucesso!\n");
@@ -954,7 +954,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     FILE *f19;
     f19 = fopen("dezenove.bin", "r");
     if(f19 == NULL){
-        printf("\a\a\nN„o Existe Agenda Para Esse Dia Ainda.\n");
+        printf("\a\a\nN√£o Existe Agenda Para Esse Dia Ainda.\n");
     getchar();
     }else{
         printf("\aArquivo Carregado Com Sucesso!\n");
@@ -968,7 +968,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     FILE *f20;
     f20 = fopen("vinte.bin", "r");
     if(f20 == NULL){
-        printf("\a\a\nN„o Existe Agenda Para Esse Dia Ainda.\n");
+        printf("\a\a\nN√£o Existe Agenda Para Esse Dia Ainda.\n");
     getchar();
     }else{
         printf("\aArquivo Carregado Com Sucesso!\n");
@@ -982,7 +982,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     FILE *f21;
     f21 = fopen("vinteum.bin", "r");
     if(f21 == NULL){
-    printf("\a\a\nN„o Existe Agenda Para Esse Dia Ainda.\n");
+    printf("\a\a\nN√£o Existe Agenda Para Esse Dia Ainda.\n");
     getchar();
     }else{
         printf("\aArquivo Carregado Com Sucesso!\n");
@@ -996,7 +996,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     FILE *f22;
     f22 = fopen("vintedois.bin", "r");
     if(f22 == NULL){
-        printf("\a\a\nN„o Existe Agenda Para Esse Dia Ainda.\n");
+        printf("\a\a\nN√£o Existe Agenda Para Esse Dia Ainda.\n");
     getchar();
     }else{
         printf("\aArquivo Carregado Com Sucesso!\n");
@@ -1010,7 +1010,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     FILE *f23;
     f23 = fopen("vintetres.bin", "r");
     if(f23 == NULL){
-    printf("\a\a\nN„o Existe Agenda Para Esse Dia Ainda.\n");
+    printf("\a\a\nN√£o Existe Agenda Para Esse Dia Ainda.\n");
     getchar();
     }else{
         printf("\aArquivo Carregado Com Sucesso!\n");
@@ -1024,7 +1024,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     FILE *f24;
     f24 = fopen("vintequatro.bin", "r");
     if(f24 == NULL){
-    printf("\a\a\nN„o Existe Agenda Para Esse Dia Ainda.\n");
+    printf("\a\a\nN√£o Existe Agenda Para Esse Dia Ainda.\n");
     getchar();
     }else{
         printf("\aArquivo Carregado Com Sucesso!\n");
@@ -1038,7 +1038,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     FILE *f25;
     f25 = fopen("vintecinco.bin", "r");
     if(f25 == NULL){
-        printf("\a\a\nN„o Existe Agenda Para Esse Dia Ainda.\n");
+        printf("\a\a\nN√£o Existe Agenda Para Esse Dia Ainda.\n");
     getchar();
     }else{
         printf("\aArquivo Carregado Com Sucesso!\n");
@@ -1052,7 +1052,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     FILE *f26;
     f26 = fopen("vinteseis.bin", "r");
     if(f26 == NULL){
-    printf("\a\a\nN„o Existe Agenda Para Esse Dia Ainda.\n");
+    printf("\a\a\nN√£o Existe Agenda Para Esse Dia Ainda.\n");
     getchar();
     }else{
         printf("\aArquivo Carregado Com Sucesso!\n");
@@ -1066,7 +1066,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     FILE *f27;
     f27 = fopen("vintesete.bin", "r");
     if(f27 == NULL){
-    printf("\a\a\nN„o Existe Agenda Para Esse Dia Ainda.\n");
+    printf("\a\a\nN√£o Existe Agenda Para Esse Dia Ainda.\n");
     getchar();
     }else{
         printf("\aArquivo Carregado Com Sucesso!\n");
@@ -1080,7 +1080,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     FILE *f28;
     f28 = fopen("vinteoito.bin", "r");
     if(f28 == NULL){
-        printf("\a\a\nN„o Existe Agenda Para Esse Dia Ainda\n.");
+        printf("\a\a\nN√£o Existe Agenda Para Esse Dia Ainda\n.");
     getchar();
     }else{
         printf("\aArquivo Carregado Com Sucesso!\n");
@@ -1094,7 +1094,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     FILE *f29;
     f29 = fopen("vintenove.bin", "r");
     if(f29 == NULL){
-    printf("\a\a\nN„o Existe Agenda Para Esse Dia Ainda\n.");
+    printf("\a\a\nN√£o Existe Agenda Para Esse Dia Ainda\n.");
     getchar();
     }else{
         printf("\aArquivo Carregado Com Sucesso!\n");
@@ -1108,7 +1108,7 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
     FILE *f30;
     f30 = fopen("trinta.bin", "r");
     if(f30 == NULL){
-    printf("\a\a\nN„o Existe Agenda Para Esse Dia Ainda\n.");
+    printf("\a\a\nN√£o Existe Agenda Para Esse Dia Ainda\n.");
     getchar();
     }else{
         printf("\aArquivo Carregado Com Sucesso!\n");
@@ -1118,11 +1118,11 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
             fclose(f30);
     }
     }
-            if(data== 31){                           //Aqui comeÁa a contagem de trintaeum !
+            if(data== 31){                           //Aqui come√ßa a contagem de trintaeum !
     FILE *f31;
     f31 = fopen("trintaeum.bin", "r");
     if(f31 == NULL){
-    printf("\a\a\nN„o Existe Agenda Para Esse Dia Ainda\n.");
+    printf("\a\a\nN√£o Existe Agenda Para Esse Dia Ainda\n.");
     getchar();
     }else{
         printf("\aArquivo Carregado Com Sucesso!\n");
@@ -1132,13 +1132,13 @@ int mat[5][7] =  {{29,30,1,2,3,4,5},                      //Matriz representativ
             fclose(f31);
     }
 	}
-}													   //Fechamento da OpÁ„o de Leitura
-	if(opcao==3){                                      //OpÁ„o de Feriados de Dezembro
+}							 //Fechamento da Op√ß√£o de Leitura
+	if(opcao==3){                                      //Op√ß√£o de Feriados de Dezembro
 		printf("Feriados Dezembro 2015\n");
 		FILE *fe;
     fe = fopen("feriados.txt", "r");
     if(fe == NULL){
-    printf("\a\a\nN„o foi Possivel abrir o Arquivo.");
+    printf("\a\a\nN√£o foi Possivel abrir o Arquivo.");
     getchar();
     exit(0);
     }else{
@@ -1153,7 +1153,7 @@ system("pause");
 system("cls");
 }
 }                                                 //Final do Programa antes do Titulo
-    void titulo(void){                           // FunÁ„o que exibe titulo
+    void titulo(void){                           // Fun√ß√£o que exibe titulo
     printf("********************\n");
     printf("    DEZEMBRO 2015   \n");
     printf("********************\n");
